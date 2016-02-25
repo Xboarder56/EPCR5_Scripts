@@ -84,23 +84,15 @@ relay_off () {
 		relayopt7=$7
 		relayopt8=$8
 		
-		#Turn on relay's
-		ubus call dli.relay.ttyATH0.$relayopt1 set '{"key":"state","value":"true"}'
-		sleep 0.5
-		ubus call dli.relay.ttyATH0.$relayopt2 set '{"key":"state","value":"true"}'
-		sleep 0.5
-		ubus call dli.relay.ttyATH0.$relayopt3 set '{"key":"state","value":"true"}'
-		sleep 0.5
-		ubus call dli.relay.ttyATH0.$relayopt4 set '{"key":"state","value":"true"}'
-		sleep 0.5
-		ubus call dli.relay.ttyATH0.$relayopt5 set '{"key":"state","value":"true"}'
-		sleep 0.5
-		ubus call dli.relay.ttyATH0.$relayopt6 set '{"key":"state","value":"true"}'
-		sleep 0.5
-		ubus call dli.relay.ttyATH0.$relayopt7 set '{"key":"state","value":"true"}'
-		sleep 0.5
-		ubus call dli.relay.ttyATH0.$relayopt8 set '{"key":"state","value":"true"}'
-		sleep 0.5
+		#Turn off relay's
+		ubus call dli.relay.ttyATH0.$relayopt1 set '{"key":"state","value":"false"}'
+		ubus call dli.relay.ttyATH0.$relayopt2 set '{"key":"state","value":"false"}'
+		ubus call dli.relay.ttyATH0.$relayopt3 set '{"key":"state","value":"false"}'
+		ubus call dli.relay.ttyATH0.$relayopt4 set '{"key":"state","value":"false"}'
+		ubus call dli.relay.ttyATH0.$relayopt5 set '{"key":"state","value":"false"}'
+		ubus call dli.relay.ttyATH0.$relayopt6 set '{"key":"state","value":"false"}'
+		ubus call dli.relay.ttyATH0.$relayopt7 set '{"key":"state","value":"false"}'
+		ubus call dli.relay.ttyATH0.$relayopt8 set '{"key":"state","value":"false"}'
 }
 
 all_relay_on () {
