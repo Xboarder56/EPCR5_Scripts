@@ -86,13 +86,21 @@ relay_off () {
 		
 		#Turn on relay's
 		ubus call dli.relay.ttyATH0.$relayopt1 set '{"key":"state","value":"true"}'
+		sleep 0.5
 		ubus call dli.relay.ttyATH0.$relayopt2 set '{"key":"state","value":"true"}'
+		sleep 0.5
 		ubus call dli.relay.ttyATH0.$relayopt3 set '{"key":"state","value":"true"}'
+		sleep 0.5
 		ubus call dli.relay.ttyATH0.$relayopt4 set '{"key":"state","value":"true"}'
+		sleep 0.5
 		ubus call dli.relay.ttyATH0.$relayopt5 set '{"key":"state","value":"true"}'
+		sleep 0.5
 		ubus call dli.relay.ttyATH0.$relayopt6 set '{"key":"state","value":"true"}'
+		sleep 0.5
 		ubus call dli.relay.ttyATH0.$relayopt7 set '{"key":"state","value":"true"}'
+		sleep 0.5
 		ubus call dli.relay.ttyATH0.$relayopt8 set '{"key":"state","value":"true"}'
+		sleep 0.5
 }
 
 all_relay_on () {
@@ -144,13 +152,13 @@ while true
 		 
 		#Relay On
 		2) clear
-		 read -p "Enter the relay number's you would like to toggle. (Example: 1 4 5): " num
+		 read -p "Enter the relay number's you would like to turn on. (Example: 1 4 5): " num
 		relay_on $num
 		 ;;
 
 		#Relay Off
 		3) clear
-		 read -p "Enter the relay number's you would like to toggle. (Example: 1 4 5): " num
+		 read -p "Enter the relay number's you would like to turn off. (Example: 1 4 5): " num
 		 relay_off $num
 		 ;;
 
