@@ -1,21 +1,21 @@
 #!/bin/sh 
 # PowerMenu EPCR5 v0.3
 # *************************************************************************
-# *              Copyright (c) 2016 by Garrett J. Beasley	           *
-# *									   *	
-# * 	  					        		   *
+# *              Copyright (c) 2016 by Garrett J. Beasley	          *
+# *									  *	
+# * 	  					        		  *
 # *     Licensed under the Apache License, Version 2.0 (the "License");   *
 # *     you may not use this file except in compliance with the License.  *
-# *              You may obtain a copy of the License at		   *		   
-# * 									   *
-# *              http://www.apache.org/licenses/LICENSE-2.0		   *	
-# * 									   *
+# *              You may obtain a copy of the License at		  *		   
+# * 									  *
+# *              http://www.apache.org/licenses/LICENSE-2.0		  *	
+# * 									  *
 # *   Unless required by applicable law or agreed to in writing, software *
 # *    distributed under the License is distributed on an "AS IS" BASIS,  *
 # *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied*
 # *  See the License for the specific language governing permissions and  *
-# *                  limitations under the License.			   *
-# * 									   *
+# *                  limitations under the License.			  *
+# * 									  *
 # *************************************************************************
 
 toggle_relay () {
@@ -211,19 +211,19 @@ while true
 		
 		#Toggle Relay
 		1) clear
-		 read -p "Enter the relay number's you would like to toggle. (Example: 1): " num
+		 read -p "Enter the relay number's you would like to toggle. (Example: 1 3 6): " num
 		 toggle_relay $num
 		 ;;
 		 
 		#Relay On
 		2) clear
-		 read -p "Enter the relay number's you would like to toggle. (Example: 1 4 5): " num
+		 read -p "Enter the relay number's you would like to turn on. (Example: 1 4 5): " num
 		relay_on $num
 		 ;;
 
 		#Relay Off
 		3) clear
-		 read -p "Enter the relay number's you would like to toggle. (Example: 1 4 5): " num
+		 read -p "Enter the relay number's you would like to turn off. (Example: 1 7 2): " num
 		 relay_off $num
 		 ;;
 
