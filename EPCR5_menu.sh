@@ -1,21 +1,21 @@
 #!/bin/sh 
-# PowerMenu EPCR5 v0.2
+# PowerMenu EPCR5 v0.3
 # *************************************************************************
-# *              Copyright (c) 2016 by Garrett J. Beasley	          *
-# *									  *	
-# * 	  					        		  *
+# *              Copyright (c) 2016 by Garrett J. Beasley	           *
+# *									   *	
+# * 	  					        		   *
 # *     Licensed under the Apache License, Version 2.0 (the "License");   *
 # *     you may not use this file except in compliance with the License.  *
-# *              You may obtain a copy of the License at		  *		   
-# * 									  *
-# *              http://www.apache.org/licenses/LICENSE-2.0		  *	
-# * 									  *
+# *              You may obtain a copy of the License at		   *		   
+# * 									   *
+# *              http://www.apache.org/licenses/LICENSE-2.0		   *	
+# * 									   *
 # *   Unless required by applicable law or agreed to in writing, software *
 # *    distributed under the License is distributed on an "AS IS" BASIS,  *
 # *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied*
 # *  See the License for the specific language governing permissions and  *
-# *                  limitations under the License.			  *
-# * 									  *
+# *                  limitations under the License.			   *
+# * 									   *
 # *************************************************************************
 
 toggle_relay () {
@@ -117,12 +117,85 @@ all_relay_off () {
 		done
 }
 
+relay_status () {
+		#relayinfo
+		relayinfo1=`ubus call dli.relay.ttyATH0.1 get '{"key":"state"}' | grep value | grep -o false`
+		relayinfo2=`ubus call dli.relay.ttyATH0.2 get '{"key":"state"}' | grep value | grep -o false`
+		relayinfo3=`ubus call dli.relay.ttyATH0.3 get '{"key":"state"}' | grep value | grep -o false`
+		relayinfo4=`ubus call dli.relay.ttyATH0.4 get '{"key":"state"}' | grep value | grep -o false`
+		relayinfo5=`ubus call dli.relay.ttyATH0.5 get '{"key":"state"}' | grep value | grep -o false`
+		relayinfo6=`ubus call dli.relay.ttyATH0.6 get '{"key":"state"}' | grep value | grep -o false`
+		relayinfo7=`ubus call dli.relay.ttyATH0.7 get '{"key":"state"}' | grep value | grep -o false`
+		relayinfo8=`ubus call dli.relay.ttyATH0.8 get '{"key":"state"}' | grep value | grep -o false`
+
+		if [ "$relayinfo1" = "false" ]
+		then
+			relayinfo1="Off"
+		else
+			relayinfo1="On"
+		fi
+		
+		if [ "$relayinfo2" = "false" ]
+		then
+			relayinfo2="Off"
+		else
+			relayinfo2="On"
+		fi
+		
+		if [ "$relayinfo3" = "false" ]
+		then
+			relayinfo3="Off"
+		else
+			relayinfo3="On"
+		fi
+		
+		if [ "$relayinfo4" = "false" ]
+		then
+			relayinfo4="Off"
+		else
+			relayinfo4="On"
+		fi
+		
+		if [ "$relayinfo5" = "false" ]
+		then
+			relayinfo5="Off"
+		else
+			relayinfo5="On"
+		fi
+		
+		if [ "$relayinfo6" = "false" ]
+		then
+			relayinfo6="Off"
+		else
+			relayinfo6="On"
+		fi
+		
+		if [ "$relayinfo7" = "false" ]
+		then
+			relayinfo7="Off"
+		else
+			relayinfo7="On"
+		fi
+		
+		if [ "$relayinfo8" = "false" ]
+		then
+			relayinfo8="Off"
+		else
+			relayinfo8="On"
+		fi
+		
+		echo "Relay 1: " $relayinfo1 " Relay 2: " $relayinfo2 " Relay 3: " $relayinfo3 " Relay 4: " $relayinfo4
+		echo "Relay 5: " $relayinfo5 " Relay 6: " $relayinfo6 " Relay 7: " $relayinfo7 " Relay 8: " $relayinfo8
+}
+
 while true
 	do
 	clear
 	echo "*******************"
 	echo "	Menu	  	 "
 	echo "*******************"
+	echo " "
+	relay_status
 	echo " "
 	echo "1. Toggle Relay's"
 	echo "2. Relay On"
@@ -144,13 +217,13 @@ while true
 		 
 		#Relay On
 		2) clear
-		 read -p "Enter the relay number's you would like to turn on. (Example: 1 4 5): " num
+		 read -p "Enter the relay number's you would like to toggle. (Example: 1 4 5): " num
 		relay_on $num
 		 ;;
 
 		#Relay Off
 		3) clear
-		 read -p "Enter the relay number's you would like to turn off. (Example: 1 4 5): " num
+		 read -p "Enter the relay number's you would like to toggle. (Example: 1 4 5): " num
 		 relay_off $num
 		 ;;
 
