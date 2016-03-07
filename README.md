@@ -11,8 +11,6 @@ This is a menu to control the EPCR5 from SSH and show the status of each relay. 
 
 ## Pictures
 
-Relay Off Example: 
 ![alt text](https://raw.githubusercontent.com/Xboarder56/EPCR5_Scripts/master/Images/EPCR5_OFF.PNG "Relay off Example")
 
-Relay On Example: 
 ![alt text](https://raw.githubusercontent.com/Xboarder56/EPCR5_Scripts/master/Images/EPCR5_ON.PNG "Relay On Example")
