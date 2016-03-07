@@ -130,58 +130,58 @@ relay_status () {
 
 		if [ "$relayinfo1" = "false" ]
 		then
-			relayinfo1="Off"
+			relayinfo1=`echo -e "\033[91mOff\e[0m"`
 		else
-			relayinfo1="On"
+			relayinfo1=`echo -e "\033[92mOn\e[0m"`
 		fi
 		
 		if [ "$relayinfo2" = "false" ]
 		then
-			relayinfo2="Off"
+			relayinfo2=`echo -e "\033[91mOff\e[0m"`
 		else
-			relayinfo2="On"
+			relayinfo2=`echo -e "\033[92mOn\e[0m"`
 		fi
 		
 		if [ "$relayinfo3" = "false" ]
 		then
-			relayinfo3="Off"
+			relayinfo3=`echo -e "\033[91mOff\e[0m"`
 		else
-			relayinfo3="On"
+			relayinfo3=`echo -e "\033[92mOn\e[0m"`
 		fi
 		
 		if [ "$relayinfo4" = "false" ]
 		then
-			relayinfo4="Off"
+			relayinfo4=`echo -e "\033[91mOff\e[0m"`
 		else
-			relayinfo4="On"
+			relayinfo4=`echo -e "\033[92mOn\e[0m"`
 		fi
 		
 		if [ "$relayinfo5" = "false" ]
 		then
-			relayinfo5="Off"
+			relayinfo5=`echo -e "\033[91mOff\e[0m"`
 		else
-			relayinfo5="On"
+			relayinfo5=`echo -e "\033[92mOn\e[0m"`
 		fi
 		
 		if [ "$relayinfo6" = "false" ]
 		then
-			relayinfo6="Off"
+			relayinfo6=`echo -e "\033[91mOff\e[0m"`
 		else
-			relayinfo6="On"
+			relayinfo6=`echo -e "\033[92mOn\e[0m"`
 		fi
 		
 		if [ "$relayinfo7" = "false" ]
 		then
-			relayinfo7="Off"
+			relayinfo7=`echo -e "\033[91mOff\e[0m"`
 		else
-			relayinfo7="On"
+			relayinfo7=`echo -e "\033[92mOn\e[0m"`
 		fi
 		
 		if [ "$relayinfo8" = "false" ]
 		then
-			relayinfo8="Off"
+			relayinfo8=`echo -e "\033[91mOff\e[0m"`
 		else
-			relayinfo8="On"
+			relayinfo8=`echo -e "\033[92mOn\e[0m"`
 		fi
 		
 		echo "Relay 1: " $relayinfo1 " Relay 2: " $relayinfo2 " Relay 3: " $relayinfo3 " Relay 4: " $relayinfo4
